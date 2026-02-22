@@ -1,27 +1,12 @@
 [
     {
-        "label": "GitHub",
-        "url": "https://github.com/novacore",
-        "icon": "Github"
-    },
-    {
-        "label": "LinkedIn",
-        "url": "https://linkedin.com/in/novacore",
-        "icon": "Linkedin"
-    },
-    {
-        "label": "Twitter",
-        "url": "https://twitter.com/novacore",
-        "icon": "Twitter"
-    },
-    {
         "label": "Telegram",
-        "url": "https://t.me/novacore",
+        "url": "https://t.me/o_ip8",
         "icon": "Send"
     },
     {
         "label": "Instagram",
-        "url": "https://instagram.com/novacore",
+        "url": "https://www.instagram.com/o_0x01",
         "icon": "Instagram"
     }
 ]
