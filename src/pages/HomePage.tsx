@@ -56,6 +56,10 @@ const socialIconMap: Record<string, LucideIcon> = {
   Instagram, Youtube, Facebook, Globe, Twitch,
 };
 
+/** Prepend Vite's base URL to /public asset paths — required for GitHub Pages sub-path hosting. */
+const pub = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+
 const getIcon = (name: string): React.ElementType => iconMap[name] ?? Code2;
 
 
@@ -493,7 +497,7 @@ export default function HomePage() {
               }`}>
               <div className="relative">
                 <img
-                  src={config.personal.avatar}
+                  src={pub(config.personal.avatar)}
                   alt={config.personal.name}
                   className="w-full max-w-md mx-auto rounded-2xl border border-white/10"
                 />
