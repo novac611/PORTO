@@ -150,7 +150,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             <a href="/" className="flex items-center gap-3">
-              <img src="/plogo.png" alt={config.brandName} className="w-10 h-10" />
+              <img src={pub('/plogo.png')} alt={config.brandName} className="w-10 h-10" />
               <span className="font-display text-xl tracking-wider hidden sm:block">{config.brandName}</span>
             </a>
 
@@ -240,7 +240,7 @@ export default function HomePage() {
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <img
-                  src="/plogo.png"
+                  src={pub('/plogo.png')}
                   alt={config.brandName}
                   className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain drop-shadow-[0_0_20px_rgba(0,255,255,0.3)]"
                 />
@@ -696,7 +696,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <img src="/plogo.png" alt={config.brandName} className="w-8 h-8" />
+              <img src={pub('/plogo.png')} alt={config.brandName} className="w-8 h-8" />
               <span className="font-display text-xl tracking-wider">{config.brandName}</span>
             </div>
 
