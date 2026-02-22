@@ -149,7 +149,7 @@ export default function HomePage() {
         }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
-            <a href="/" className="flex items-center gap-3">
+            <a href="/PORTO" className="flex items-center gap-3">
               <img src={pub('/plogo.png')} alt={config.brandName} className="w-10 h-10" />
               <span className="font-display text-xl tracking-wider hidden sm:block">{config.brandName}</span>
             </a>
