@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nova Core</title>
+  <script>
+    // GitHub Pages SPA redirect trick.
+    // When a user navigates directly to /admin or any deep link,
+    // GitHub Pages returns this 404.html. We redirect them back to
+    // the root with the path encoded as a query param, which the
+    // SPA picks up and restores via history.replaceState.
+    var l = window.location;
+    l.replace(
+      l.protocol + '//' + l.host + l.pathname.split('/').slice(0, 1).join('/') +
+      '/?p=' + encodeURIComponent(l.pathname.slice(1) + l.search) + l.hash
+    );
+  </script>
+</head>
+<body></body>
+</html>

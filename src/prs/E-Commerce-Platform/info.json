@@ -1,0 +1,12 @@
+{
+    "title": "E-Commerce Platform",
+    "description": "A full-featured online store with real-time inventory management, secure payment processing, and AI-powered product recommendations.",
+    "tags": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Stripe"
+    ],
+    "liveUrl": "https://example.com",
+    "repoUrl": "https://github.com/example/project"
+}

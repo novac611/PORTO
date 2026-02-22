@@ -1,0 +1,27 @@
+[
+    {
+        "label": "GitHub",
+        "url": "https://github.com/novacore",
+        "icon": "Github"
+    },
+    {
+        "label": "LinkedIn",
+        "url": "https://linkedin.com/in/novacore",
+        "icon": "Linkedin"
+    },
+    {
+        "label": "Twitter",
+        "url": "https://twitter.com/novacore",
+        "icon": "Twitter"
+    },
+    {
+        "label": "Telegram",
+        "url": "https://t.me/novacore",
+        "icon": "Send"
+    },
+    {
+        "label": "Instagram",
+        "url": "https://instagram.com/novacore",
+        "icon": "Instagram"
+    }
+]
