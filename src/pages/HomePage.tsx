@@ -221,7 +221,7 @@ export default function HomePage() {
             style={{ transform: `translateY(${scrollY * 0.3}px)` }}
           >
             <img
-              src="/hero-bg.jpg"
+              src={pub('/hero-bg.jpg')}
               alt="Professional workspace"
               className="w-full h-full object-cover"
             />
