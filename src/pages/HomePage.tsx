@@ -617,109 +617,108 @@ export default function HomePage() {
             </div>
 
             {/* Right side - Form */}
-            <div className="hidden"
-              }`}>
-            <form onSubmit={handleContactSubmit} className="glass-card rounded-2xl p-8 space-y-6 border-cyan/20">
-              {formStatus === 'sent' ? (
-                <div className="text-center py-12">
-                  <div className="w-16 h-16 bg-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle2 className="w-8 h-8 text-cyan" />
+            <div className="hidden">
+              <form onSubmit={handleContactSubmit} className="glass-card rounded-2xl p-8 space-y-6 border-cyan/20">
+                {formStatus === 'sent' ? (
+                  <div className="text-center py-12">
+                    <div className="w-16 h-16 bg-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle2 className="w-8 h-8 text-cyan" />
+                    </div>
+                    <h3 className="font-display text-2xl mb-2">Message Sent!</h3>
+                    <p className="text-white/60">I'll get back to you soon.</p>
                   </div>
-                  <h3 className="font-display text-2xl mb-2">Message Sent!</h3>
-                  <p className="text-white/60">I'll get back to you soon.</p>
-                </div>
-              ) : (
-                <>
-                  <div>
-                    <label className="block text-white/60 text-sm mb-2">Name</label>
-                    <Input
-                      type="text"
-                      value={contactForm.name}
-                      onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
-                      placeholder="Your name"
-                      required
-                      className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-cyan focus:ring-cyan/20"
-                    />
-                  </div>
+                ) : (
+                  <>
+                    <div>
+                      <label className="block text-white/60 text-sm mb-2">Name</label>
+                      <Input
+                        type="text"
+                        value={contactForm.name}
+                        onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
+                        placeholder="Your name"
+                        required
+                        className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-cyan focus:ring-cyan/20"
+                      />
+                    </div>
 
-                  <div>
-                    <label className="block text-white/60 text-sm mb-2">Email</label>
-                    <Input
-                      type="email"
-                      value={contactForm.email}
-                      onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                      placeholder="your@email.com"
-                      required
-                      className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-cyan focus:ring-cyan/20"
-                    />
-                  </div>
+                    <div>
+                      <label className="block text-white/60 text-sm mb-2">Email</label>
+                      <Input
+                        type="email"
+                        value={contactForm.email}
+                        onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
+                        placeholder="your@email.com"
+                        required
+                        className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-cyan focus:ring-cyan/20"
+                      />
+                    </div>
 
-                  <div>
-                    <label className="block text-white/60 text-sm mb-2">Message</label>
-                    <Textarea
-                      value={contactForm.message}
-                      onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
-                      placeholder="Tell me about your project..."
-                      required
-                      rows={4}
-                      className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-cyan focus:ring-cyan/20 resize-none"
-                    />
-                  </div>
+                    <div>
+                      <label className="block text-white/60 text-sm mb-2">Message</label>
+                      <Textarea
+                        value={contactForm.message}
+                        onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
+                        placeholder="Tell me about your project..."
+                        required
+                        rows={4}
+                        className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-cyan focus:ring-cyan/20 resize-none"
+                      />
+                    </div>
 
-                  <Button
-                    type="submit"
-                    disabled={formStatus === 'sending'}
-                    className="w-full bg-cyan text-black hover:bg-cyan-dark py-6 text-base font-medium transition-all duration-300 hover:shadow-glow-cyan disabled:opacity-50"
-                  >
-                    {formStatus === 'sending' ? (
-                      <span className="flex items-center gap-2">
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                        Sending...
-                      </span>
-                    ) : (
-                      <span className="flex items-center gap-2">
-                        Send Message
-                        <Send className="w-4 h-4" />
-                      </span>
-                    )}
-                  </Button>
-                </>
-              )}
-            </form>
+                    <Button
+                      type="submit"
+                      disabled={formStatus === 'sending'}
+                      className="w-full bg-cyan text-black hover:bg-cyan-dark py-6 text-base font-medium transition-all duration-300 hover:shadow-glow-cyan disabled:opacity-50"
+                    >
+                      {formStatus === 'sending' ? (
+                        <span className="flex items-center gap-2">
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          Sending...
+                        </span>
+                      ) : (
+                        <span className="flex items-center gap-2">
+                          Send Message
+                          <Send className="w-4 h-4" />
+                        </span>
+                      )}
+                    </Button>
+                  </>
+                )}
+              </form>
+            </div>
           </div>
         </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="relative py-12 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-3">
+              <img src={pub('/plogo.png')} alt={config.brandName} className="w-8 h-8" />
+              <span className="font-display text-xl tracking-wider">{config.brandName}</span>
+            </div>
+
+            <div className="text-white/40 text-sm">
+              © {new Date().getFullYear()} {config.brandName}. All rights reserved.
+            </div>
+
+            <div className="flex gap-6">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/40 hover:text-cyan transition-colors text-sm"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-      </section >
-
-    {/* Footer */ }
-    < footer className = "relative py-12 border-t border-white/10" >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <img src={pub('/plogo.png')} alt={config.brandName} className="w-8 h-8" />
-            <span className="font-display text-xl tracking-wider">{config.brandName}</span>
-          </div>
-
-          <div className="text-white/40 text-sm">
-            © {new Date().getFullYear()} {config.brandName}. All rights reserved.
-          </div>
-
-          <div className="flex gap-6">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/40 hover:text-cyan transition-colors text-sm"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-      </footer >
-    </div >
   );
 }
