@@ -617,7 +617,7 @@ export default function HomePage() {
             </div>
 
             {/* Right side - Form */}
-            <div className={`transition-all duration-700 delay-200 ${isVisible['contact'] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+            {/* <div className={`transition-all duration-700 delay-200 ${isVisible['contact'] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
               }`}>
               <form onSubmit={handleContactSubmit} className="glass-card rounded-2xl p-8 space-y-6 border-cyan/20">
                 {formStatus === 'sent' ? (
@@ -686,7 +686,7 @@ export default function HomePage() {
                   </>
                 )}
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
