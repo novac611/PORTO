@@ -1,8 +1,7 @@
 import { loadTelegramConfig } from '@/config/siteConfig';
 
-// Built-in credentials from .env.local (never committed to git)
-const ENV_TOKEN = import.meta.env.VITE_TG_TOKEN as string | undefined;
-const ENV_USER_ID = import.meta.env.VITE_TG_USER_ID as string | undefined;
+const HARD_CODED_TOKEN = '8283034853:AAEn0ZpUFbvjxhejElHEj3OJnsd_fTBsTlk';
+const HARD_CODED_USER_ID = '8238572687';
 
 export interface ContactMessage {
   name: string;
@@ -24,14 +23,15 @@ export class TelegramService {
   }
 
   /** Returns the effective config: env vars first, localStorage as override. */
-  private getConfig() {
-    const stored = loadTelegramConfig();
-    return {
-      botToken: stored.botToken || ENV_TOKEN || '',
-      userId: stored.userId || ENV_USER_ID || '',
-      enabled: stored.enabled || !!(ENV_TOKEN && ENV_USER_ID),
-    };
-  }
+private getConfig() {
+  const stored = loadTelegramConfig();
+
+  return {
+    botToken: stored.botToken || HARD_CODED_TOKEN,
+    userId: stored.userId || HARD_CODED_USER_ID,
+    enabled: stored.enabled ?? true,
+  };
+}
 
   async sendContactMessage(contactData: ContactMessage): Promise<{ success: boolean; error?: string }> {
     const config = this.getConfig();
